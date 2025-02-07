@@ -44,6 +44,9 @@
       body {
         font-family: "Questrial";
       }
+      .ball {
+        visibility: hidden;
+      }
     </style>
     <!-- custom js -->
     <script src="balloons.js"></script>
@@ -78,7 +81,7 @@
               <label for="dob">Birthday</label>
             </div>
             <div class="card mt-4">
-              <div class="card-body">
+              <div class="card-body" id="checkbox-card">
                 <h5 class="card-title">Select your favorite balloons</h5>
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="red" />
