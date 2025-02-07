@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('checkbox-card').addEventListener('change', function(e){
       if (e.target.classList.contains('form-check-input')) {
         console.log(e);
-        alert(e.target.id)
+        document.getElementById(e.target.id + 'Img').style.visibility = e.target.checked ? "visible" : "hidden";
       }
     });
 
