@@ -38,6 +38,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById('submit').addEventListener('click', function(e){
     console.log("im clicked");
+    function validateCheckboxes(){
+      const checkboxes = document.querySelectorAll('input[name=checkbox-balloon]');
+      console.log(checkboxes);
+
+    }
+    validateCheckboxes();
     bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
   });
 
