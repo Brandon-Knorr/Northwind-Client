@@ -50,5 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
     validateCheckboxes();
   });
 
+
+  document.getElementById('selectAll').addEventListener('click', function(e){
+    console.log("select clicked");
+  });
 }); 
 
