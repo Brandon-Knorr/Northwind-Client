@@ -41,10 +41,13 @@ document.addEventListener("DOMContentLoaded", function() {
     function validateCheckboxes(){
       const checkboxes = document.querySelectorAll('input[name=checkbox-balloon]:checked');
       console.log(checkboxes);
-
+      if (checkboxes.length === 0) {
+        bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
+        return false;
+      }
+      return true;
     }
     validateCheckboxes();
-    bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
   });
 
 }); 
