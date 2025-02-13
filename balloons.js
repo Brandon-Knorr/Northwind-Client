@@ -6,14 +6,18 @@ document.addEventListener("DOMContentLoaded", function() {
     format: 'MM-dd'
   });
 
-  document.getElementById('greeting').addEventListener("animationend", function(e){
+  document.getElementById('greeting').addEventListener("animationstart", function(e){
     console.log("Hey man it worked");
     e.target.classList.remove("animate__heartBeat");
     console.log("Hey man that worked");
-    const classArray = ["animate__flash", "animate__rubberBand", "animate__wobble", "animate__bounce", "animate__heartBeat"];
+    const classArray = ["animate__flash", "animate__rubberBand", "animate__wobble", "animate__bounce", "animate__heartBeat", "animate__shakeX"];
     console.log(classArray);
     const randomClass = Math.floor(Math.random() * classArray.length);
     console.log(randomClass, classArray[randomClass]);
+    if (e.target.classList.contains("animate__animated")) {
+      console.log("hell yes it does");
+      e.target.classList.add(classArray[randomClass]);
+    }
   });
 
   // uncheck all boxes by default (Firefox)
