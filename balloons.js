@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
   // uncheck all boxes by default (Firefox)
   document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
   // event listener for check/uncheck
+  
   document.getElementById('checkbox-card').addEventListener('change', function(e){
     if (e.target.classList.contains('form-check-input')) {
       const elem = document.getElementById(e.target.id + 'Img');
@@ -53,6 +54,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById('selectAll').addEventListener('click', function(e){
     console.log("select clicked");
+    function toggleAllBoxes(){
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+
+      checkboxes.forEach(checkbox => {
+        checkbox.checked = !allChecked;
+      });
+    }
+    toggleAllBoxes();
   });
+
+
 }); 
 
