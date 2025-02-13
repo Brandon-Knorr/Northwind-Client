@@ -20,6 +20,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+
+
   // uncheck all boxes by default (Firefox)
   document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
   // event listener for check/uncheck
@@ -33,4 +35,11 @@ document.addEventListener("DOMContentLoaded", function() {
         elem.classList.add("animate__animated", "animate__bounceOutUp");
     }
   });
-});
+
+  document.getElementById('submit').addEventListener('click', function(e){
+    console.log("im clicked");
+    bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
+  });
+
+}); 
+
