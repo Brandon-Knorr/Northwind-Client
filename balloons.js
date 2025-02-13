@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
     format: 'MM-dd'
   });
 
+  document.getElementById('greeting').addEventListener("animationend", function(e){
+    console.log("Hey man it worked");
+    e.target.classList.remove("animate__heartBeat");
+    console.log("Hey man that worked");
+    const classArray = ["animate__flash", "animate__rubberBand", "animate__wobble", "animate__bounce", "animate__heartBeat"];
+    console.log(classArray);
+    const randomClass = Math.floor(Math.random() * classArray.length);
+    console.log(randomClass, classArray[randomClass]);
+  });
+
   // uncheck all boxes by default (Firefox)
   document.querySelectorAll('.form-check-input').forEach(c => c.checked = false);
   // event listener for check/uncheck
