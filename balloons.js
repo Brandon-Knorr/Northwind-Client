@@ -69,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
- const checkboxes = document.querySelectorAll(".form-check-label");
- const header = document.getElementById('greeting');
+  const checkboxes = document.querySelectorAll(".form-check-label");
+  const header = document.getElementById('greeting');
 
   checkboxes.forEach(checkbox => {
     checkbox.addEventListener('mouseover', function(){
