@@ -7,15 +7,10 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   document.getElementById('greeting').addEventListener("animationstart", function(e){
-    console.log("Hey man it worked");
     e.target.classList.remove("animate__heartBeat");
-    console.log("Hey man that worked");
     const classArray = ["animate__flash", "animate__rubberBand", "animate__wobble", "animate__bounce", "animate__heartBeat", "animate__shakeX"];
-    console.log(classArray);
     const randomClass = Math.floor(Math.random() * classArray.length);
-    console.log(randomClass, classArray[randomClass]);
     if (e.target.classList.contains("animate__animated")) {
-      console.log("hell yes it does");
       e.target.classList.add(classArray[randomClass]);
     }
   });
@@ -38,33 +33,41 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   document.getElementById('submit').addEventListener('click', function(e){
-    console.log("im clicked");
-    function validateCheckboxes(){
       const checkboxes = document.querySelectorAll('input[name=checkbox-balloon]:checked');
-      console.log(checkboxes);
       if (checkboxes.length === 0) {
         bootstrap.Toast.getOrCreateInstance(document.getElementById('liveToast')).show();
         return false;
       }
       return true;
-    }
-    validateCheckboxes();
   });
 
 
   document.getElementById('selectAll').addEventListener('click', function(e){
     console.log("select clicked");
-    function toggleAllBoxes(){
       const checkboxes = document.querySelectorAll('input[type="checkbox"]');
       const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
 
       checkboxes.forEach(checkbox => {
         checkbox.checked = !allChecked;
+        toggleAnimations(checkbox);
       });
     }
-    toggleAllBoxes();
-  });
+  );
 
+
+  function toggleAnimations(e) {
+    const elem = document.getElementById(e.id + 'Img');
+    if (!elem) return;
+
+    elem.style.visibility = "visible";
+    elem.classList.remove("animate__animated", "animate__bounceInDown", "animate__bounceOutUp");
+
+    if (e.checked){
+      elem.classList.add("animate__animated", "animate__bounceInDown");
+    } else {
+      elem.classList.add("animate__animated", "animate__bounceOutUp");
+    }
+  };
 
 }); 
 
