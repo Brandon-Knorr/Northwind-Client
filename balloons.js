@@ -69,5 +69,17 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
+ const checkboxes = document.querySelectorAll(".form-check-label");
+ const header = document.getElementById('greeting');
+
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener('mouseover', function(){
+    header.style.color = this.getAttribute("data-color");
+    });
+
+    checkbox.addEventListener('mouseout', function(){
+      header.style.color = '';
+    });
+  });
 }); 
 
